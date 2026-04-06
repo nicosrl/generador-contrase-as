@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import string
 
-st.title("🔐 Generador de Contraseñas")
+st.title("Generador de Contraseñas Seguras Online")
 
 longitud = st.slider("Elegí la longitud", 4, 30, 10)
 
