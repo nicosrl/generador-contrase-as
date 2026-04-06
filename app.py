@@ -1,14 +1,12 @@
+import streamlit as st
 import random
 import string
 
-print("¿Quieres generar una contraseña segura?")
-respuesta = input("Responde si o no: ")
+st.title("🔐 Generador de Contraseñas")
 
-if respuesta.lower() == "si":
+longitud = st.slider("Elegí la longitud", 4, 30, 10)
 
-    print("generando contraseña...")
-
-    longitud = int(input("¿De cuántos caracteres la querés?: "))
+if st.button("Generar contraseña"):
 
     letras = string.ascii_letters
     numeros = string.digits
@@ -18,7 +16,4 @@ if respuesta.lower() == "si":
 
     contraseña = ''.join(random.choice(todos) for i in range(longitud))
 
-    print("Tu contraseña es:", contraseña)
-
-else:
-    print("no se generó ninguna contraseña")
+    st.success(f"Tu contraseña es: {contraseña}")
